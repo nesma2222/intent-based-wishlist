@@ -1,10 +1,10 @@
-// types/index.ts
 export interface Product {
   id: string;
   name: string;
   category: 'gaming' | 'study' | 'travel' | 'beauty' | 'discount' | 'other';
   price: number;
   discount?: number;
+  offerExpiry?: number;
   image: string;
 }
 
