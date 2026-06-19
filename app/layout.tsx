@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import SmartSuggestionPopover from "@/components/organisms/SmartSuggestionPopover";
 import "./globals.css";
 import { WishlistProvider } from "@/context/WishlistContext";
 
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body>
         <WishlistProvider>
           {children}
+           <SmartSuggestionPopover />
         </WishlistProvider>
       </body>
     </html>
