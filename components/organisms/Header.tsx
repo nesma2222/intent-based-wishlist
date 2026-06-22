@@ -106,11 +106,12 @@ export default function Header() {
 
       {/* Mobile Search */}
       <div className="md:hidden px-4 pb-3">
-        <input
-          type="text"
-          placeholder="Search products..."
-          className="w-full border border-slate-200 rounded-full px-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"
-        />
+       <input
+  type="text"
+  placeholder="Search products..."
+  suppressHydrationWarning
+  className="w-full border border-slate-200 rounded-full px-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"
+/>
       </div>
     </header>
   );
