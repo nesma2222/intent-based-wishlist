@@ -1,10 +1,17 @@
-# Intent-Based Smart Wishlist System
+# Wishly 🤍
 
-A Next.js and TypeScript project for an intent-driven wishlist system.
+A smart wishlist platform that automatically organizes saved products into categories using pattern detection.
 
-**Completed:**
+## Tech Stack
+- Next.js 15, TypeScript, Tailwind CSS v4, localStorage
 
-* Project setup
-* Tailwind CSS
-* Product data models
-* Product listing UI
+## Key Feature
+Add 3+ products from the same category → Wishly suggests a wishlist automatically.
+
+## Getting Started
+```bash
+npm install
+npm run dev
+```
+
+## Folder Structure
