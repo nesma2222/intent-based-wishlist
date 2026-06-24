@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import SmartSuggestionPopover from "@/components/organisms/SmartSuggestionPopover";
 import "./globals.css";
 import { WishlistProvider } from "@/context/WishlistContext";
+import SmartSuggestionPopover from "@/components/organisms/SmartSuggestionPopover";
+import Header from "@/components/organisms/Header";
+import Footer from "@/components/organisms/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,17 +21,15 @@ export const metadata: Metadata = {
   description: "Smart Wishlist Platform",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>
+      <body className="min-h-screen flex flex-col bg-slate-50">
         <WishlistProvider>
+          <Header />
           {children}
-           <SmartSuggestionPopover />
+          <Footer />
+          <SmartSuggestionPopover />
         </WishlistProvider>
       </body>
     </html>

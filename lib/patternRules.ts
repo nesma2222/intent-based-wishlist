@@ -1,5 +1,6 @@
 import { PatternRule } from "@/types";
 
+//triggers suggestion......sprt file made for future updates
 export const PATTERN_RULES: PatternRule[] = [
   {
     category: "gaming",
