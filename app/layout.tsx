@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { WishlistProvider } from "@/context/WishlistContext";
 import SmartSuggestionPopover from "@/components/organisms/SmartSuggestionPopover";
+import Providers from "@/components/organisms/Providers";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
 
@@ -25,12 +25,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="min-h-screen flex flex-col bg-slate-50">
-        <WishlistProvider>
+        <Providers>
           <Header />
           {children}
           <Footer />
           <SmartSuggestionPopover />
-        </WishlistProvider>
+        </Providers>
       </body>
     </html>
   );
