@@ -7,10 +7,7 @@ import { useWishlist } from "@/context/WishlistContext";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import NotificationCenter from "@/components/organisms/NotificationCenter";
-<<<<<<< HEAD
-=======
 import { useRouter } from "next/navigation";
->>>>>>> feature/day10-login
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -55,8 +52,7 @@ return () => window.removeEventListener("authChange", handleStorage);
 
   return (
     <header className="bg-white border-b border-slate-100 sticky top-0 z-40">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 shrink-0">
           <div className="w-7 h-7 rounded-lg bg-teal-500 flex items-center justify-center">
@@ -97,12 +93,6 @@ return () => window.removeEventListener("authChange", handleStorage);
               </span>
             )}
           </Link>
-<<<<<<< HEAD
-<NotificationCenter />
-          <Button asChild size="sm" className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-4">
-            <Link href="/login">Sign In</Link>
-          </Button>
-=======
 
           <NotificationCenter />
 
@@ -130,7 +120,6 @@ return () => window.removeEventListener("authChange", handleStorage);
               </Button>
             )
           )}
->>>>>>> feature/day10-login
         </nav>
 
         {/* Mobile Right */}

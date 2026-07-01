@@ -5,7 +5,7 @@ import SmartSuggestionPopover from "@/components/organisms/SmartSuggestionPopove
 import Providers from "@/components/organisms/Providers";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
-import Providers from "@/components/organisms/Providers";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
