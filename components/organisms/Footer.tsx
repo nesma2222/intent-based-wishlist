@@ -4,8 +4,7 @@ import { Heart } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-teal-900 text-white mt-12">
-      <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
-
+      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
         {/* Brand */}
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-2 mb-3">
@@ -14,7 +13,7 @@ export default function Footer() {
             </div>
             <span className="text-lg font-bold">Wishly</span>
           </div>
-          <p className="text-xs text-teal-200 leading-relaxed">
+          <p className="text-xs text-zinc-300  leading-relaxed">
             Smart wishlists that organize themselves. Save products, get notified on deals.
           </p>
         </div>
@@ -22,7 +21,7 @@ export default function Footer() {
         {/* Shop */}
         <div>
           <h4 className="text-sm font-semibold mb-3">Shop</h4>
-          <ul className="flex flex-col gap-2 text-xs text-teal-200">
+          <ul className="flex flex-col gap-2 text-xs text-zinc-300 ">
             <li><Link href="/products" className="hover:text-white">All Products</Link></li>
             <li><Link href="/products?cat=gaming" className="hover:text-white">Gaming</Link></li>
             <li><Link href="/products?cat=study" className="hover:text-white">Study</Link></li>
@@ -34,7 +33,7 @@ export default function Footer() {
         {/* Account */}
         <div>
           <h4 className="text-sm font-semibold mb-3">Account</h4>
-          <ul className="flex flex-col gap-2 text-xs text-teal-200">
+          <ul className="flex flex-col gap-2 text-xs text-zinc-300 ">
             <li><Link href="/login" className="hover:text-white">Sign In</Link></li>
             <li><Link href="/wishlist" className="hover:text-white">My Wishlist</Link></li>
             <li><Link href="/cart" className="hover:text-white">My Cart</Link></li>
@@ -44,7 +43,7 @@ export default function Footer() {
         {/* Info */}
         <div>
           <h4 className="text-sm font-semibold mb-3">Info</h4>
-          <ul className="flex flex-col gap-2 text-xs text-teal-200">
+          <ul className="flex flex-col gap-2 text-xs text-zinc-300 ">
             <li><span className="hover:text-white cursor-pointer">About Us</span></li>
             <li><span className="hover:text-white cursor-pointer">Privacy Policy</span></li>
             <li><span className="hover:text-white cursor-pointer">Contact Us</span></li>
@@ -52,7 +51,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-teal-800 py-4 text-center text-xs text-teal-300">
+      <div className="border-t border-teal-800 py-4 text-center text-xs  text-zinc-400">
         © 2026 Wishly. All rights reserved.
       </div>
     </footer>
