@@ -6,6 +6,7 @@ import { ShoppingCart, Heart, Menu } from "lucide-react";
 import { useWishlist } from "@/context/WishlistContext";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import NotificationCenter from "@/components/organisms/NotificationCenter";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -54,7 +55,7 @@ export default function Header() {
               </span>
             )}
           </Link>
-
+<NotificationCenter />
           <Button asChild size="sm" className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-4">
             <Link href="/login">Sign In</Link>
           </Button>
@@ -79,6 +80,7 @@ export default function Header() {
             )}
           </Link>
 
+<NotificationCenter />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <button className="text-slate-600">
