@@ -1,16 +1,57 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { ShoppingCart, Heart, Menu } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ShoppingCart, Heart, Menu, User, LogOut } from "lucide-react";
 import { useWishlist } from "@/context/WishlistContext";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import NotificationCenter from "@/components/organisms/NotificationCenter";
+<<<<<<< HEAD
+=======
+import { useRouter } from "next/navigation";
+>>>>>>> feature/day10-login
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [mounted, setMounted] = useState(false);
   const { cart, myWishlist } = useWishlist();
+  const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+    const loggedIn = localStorage.getItem("isLoggedIn");
+    const name = localStorage.getItem("userName");
+    if (loggedIn === "true") {
+      setIsLoggedIn(true);
+      setUserName(name || "User");
+    }
+
+    const handleStorage = () => {
+      const loggedIn = localStorage.getItem("isLoggedIn");
+      const name = localStorage.getItem("userName");
+      if (loggedIn === "true") {
+        setIsLoggedIn(true);
+        setUserName(name || "User");
+      } else {
+        setIsLoggedIn(false);
+        setUserName("");
+      }
+    };
+
+   window.addEventListener("authChange", handleStorage);
+return () => window.removeEventListener("authChange", handleStorage);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userName");
+    setIsLoggedIn(false);
+    setUserName("");
+    router.push("/");
+  };
 
   return (
     <header className="bg-white border-b border-slate-100 sticky top-0 z-40">
@@ -29,6 +70,7 @@ export default function Header() {
           <input
             type="text"
             placeholder="Search products..."
+            suppressHydrationWarning
             className="w-full border border-slate-200 rounded-full px-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"
           />
         </div>
@@ -55,13 +97,43 @@ export default function Header() {
               </span>
             )}
           </Link>
+<<<<<<< HEAD
 <NotificationCenter />
           <Button asChild size="sm" className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-4">
             <Link href="/login">Sign In</Link>
           </Button>
+=======
+
+          <NotificationCenter />
+
+          {mounted && (
+            isLoggedIn ? (
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 text-sm text-slate-700">
+                  <User size={16} className="text-teal-500" />
+                  <span className="capitalize">{userName}</span>
+                </div>
+                <button
+                  onClick={handleLogout}
+                  className="text-slate-400 hover:text-red-500 transition-colors"
+                >
+                  <LogOut size={16} />
+                </button>
+              </div>
+            ) : (
+              <Button
+                asChild
+                size="sm"
+                className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-4"
+              >
+                <Link href="/login">Sign In</Link>
+              </Button>
+            )
+          )}
+>>>>>>> feature/day10-login
         </nav>
 
-        {/* Mobile */}
+        {/* Mobile Right */}
         <div className="flex md:hidden items-center gap-3">
           <Link href="/wishlist" className="relative text-slate-600">
             <Heart size={20} />
@@ -79,6 +151,7 @@ export default function Header() {
               </span>
             )}
           </Link>
+          <NotificationCenter />
 
 <NotificationCenter />
           <Sheet open={open} onOpenChange={setOpen}>
@@ -99,7 +172,20 @@ export default function Header() {
                 <Link href="/products" onClick={() => setOpen(false)} className="hover:text-teal-600">Products</Link>
                 <Link href="/wishlist" onClick={() => setOpen(false)} className="hover:text-teal-600">Wishlist</Link>
                 <Link href="/cart" onClick={() => setOpen(false)} className="hover:text-teal-600">Cart</Link>
-                <Link href="/login" onClick={() => setOpen(false)} className="hover:text-teal-600">Sign In</Link>
+                {mounted && (
+                  isLoggedIn ? (
+                    <button
+                      onClick={() => { handleLogout(); setOpen(false); }}
+                      className="text-left text-red-400 hover:text-red-500"
+                    >
+                      Logout ({userName})
+                    </button>
+                  ) : (
+                    <Link href="/login" onClick={() => setOpen(false)} className="hover:text-teal-600">
+                      Sign In
+                    </Link>
+                  )
+                )}
               </nav>
             </SheetContent>
           </Sheet>
@@ -108,12 +194,12 @@ export default function Header() {
 
       {/* Mobile Search */}
       <div className="md:hidden px-4 pb-3">
-       <input
-  type="text"
-  placeholder="Search products..."
-  suppressHydrationWarning
-  className="w-full border border-slate-200 rounded-full px-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"
-/>
+        <input
+          type="text"
+          placeholder="Search products..."
+          suppressHydrationWarning
+          className="w-full border border-slate-200 rounded-full px-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"
+        />
       </div>
     </header>
   );
