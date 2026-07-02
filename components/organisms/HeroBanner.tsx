@@ -12,7 +12,7 @@ const slides = [
     subtitle: "Discover the latest gaming gear handpicked for you.",
     cta: "Shop Gaming",
     href: "/products",
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=500&fit=crop",
+    image: "https://images.unsplash.com/photo-1604846887565-640d2f52d564?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const slides = [
     subtitle: "Laptops, bags, accessories and more.",
     cta: "Shop Study",
     href: "/products",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&h=500&fit=crop",
+    image: "https://images.unsplash.com/photo-1758612898701-e2f2958f219d?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const slides = [
     subtitle: "Luggage, pillows, bags — all in one place.",
     cta: "Shop Travel",
     href: "/products",
-    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&h=500&fit=crop",
+    image: "https://plus.unsplash.com/premium_photo-1777926622785-1da1cec6b3b2?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const slides = [
     subtitle: "Limited time offers — save before they're gone.",
     cta: "Shop Deals",
     href: "/products",
-    image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&h=500&fit=crop",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function HeroBanner() {
     />
 
     {/* Dark overlay only — no color */}
-    <div className="absolute inset-0 bg-black/50" />
+    {/* <div className="absolute inset-0 bg-black/50" /> */}
 
     {/* Text Content */}
     <div className="relative z-10 h-full flex items-center px-6 md:px-16">

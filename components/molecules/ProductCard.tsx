@@ -45,18 +45,14 @@ export default function ProductCard({ product }: { product: Product }) {
           </span>
         )}
 
-        {/* Hover overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
       </div>
 
-      {/* Info */}
-      <div className="p-4">
-        <Link href={`/product/${product.id}`}>
-          <h3 className="text-sm font-semibold text-slate-800 mb-1 line-clamp-1 hover:text-teal-600 transition-colors">
-            {product.name}
-          </h3>
-        </Link>
-
+      {/* Info — whole section links to PDP */}
+      <Link href={`/product/${product.id}`} className="block p-4 pb-2">
+        <h3 className="text-sm font-semibold text-slate-800 mb-1 line-clamp-1 hover:text-teal-600 transition-colors">
+          {product.name}
+        </h3>
         <div className="flex items-center justify-between mb-2">
           <p className="text-teal-600 font-bold text-base">₹{product.price.toLocaleString()}</p>
           {product.discount && (
@@ -65,9 +61,11 @@ export default function ProductCard({ product }: { product: Product }) {
             </span>
           )}
         </div>
+      </Link>
 
+      <div className="px-4 pb-4">
         {/* Timer */}
-        {product.offerExpiry && (
+        {product.offerExpiry && product.offerExpiry > Date.now() && (
           <div className="mb-3">
             <Timer expiry={product.offerExpiry} />
           </div>
