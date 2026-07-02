@@ -42,13 +42,18 @@ export default function Header() {
 return () => window.removeEventListener("authChange", handleStorage);
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("userName");
-    setIsLoggedIn(false);
-    setUserName("");
-    router.push("/");
-  };
+const handleLogout = () => {
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("userName");
+
+  // Clear cookies
+  document.cookie = "isLoggedIn=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+  document.cookie = "userName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+
+  setIsLoggedIn(false);
+  setUserName("");
+  router.push("/");
+};
 
   return (
     <header className="bg-white border-b border-slate-100 sticky top-0 z-40">

@@ -17,13 +17,13 @@ export const sampleProducts: Product[] = [
   // Travel
   { id: "9", name: "Cabin Luggage", category: "travel", price: 3500, image: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=400&h=300&fit=crop" },
   { id: "10", name: "Travel Bag", category: "travel", price: 2000, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop" },
-  { id: "11", name: "Neck Pillow", category: "travel", price: 599, image: "https://images.unsplash.com/photo-1520038410233-7141be7e6f97?w=400&h=300&fit=crop" },
-  { id: "21", name: "Travel Pillow", category: "travel", price: 499, image: "https://images.unsplash.com/photo-1520038410233-7141be7e6f97?w=400&h=300&fit=crop" },
+  { id: "11", name: "Neck Pillow", category: "travel", price: 599, image: "https://images.unsplash.com/photo-1676030788770-448aa27b481f?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  { id: "21", name: "Travel Pillow", category: "travel", price: 499, image: "https://images.unsplash.com/photo-1691256676366-370303d55b61?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
 
   // Beauty
-  { id: "12", name: "Lipstick", category: "beauty", price: 799, image: "https://images.unsplash.com/photo-1586495777744-4e6232bf2263?w=400&h=300&fit=crop" },
+  { id: "12", name: "Lipstick", category: "beauty", price: 799, image: "https://images.unsplash.com/photo-1619352520578-8fefbfa2f904?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
   { id: "13", name: "Face Serum", category: "beauty", price: 1299, image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=300&fit=crop" },
-  { id: "14", name: "Moisturizer", category: "beauty", price: 899, image: "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab12?w=400&h=300&fit=crop" },
+  { id: "14", name: "Moisturizer", category: "beauty", price: 899, image: "https://images.unsplash.com/photo-1571782742478-0816a4773a10?q=80&w=701&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
 
   // Discount
   { id: "15", name: "Smart Watch", category: "discount", price: 5000, discount: 50, offerExpiry: Date.now() + 3 * 60 * 60 * 1000, image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" },

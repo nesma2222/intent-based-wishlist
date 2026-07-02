@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import SmartSuggestionPopover from "@/components/organisms/SmartSuggestionPopover";
 import Providers from "@/components/organisms/Providers";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -24,13 +17,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen flex flex-col bg-slate-50">
+    <html lang="en" className={inter.variable}>
+      <body className="min-h-screen flex flex-col bg-slate-50 font-sans">
         <Providers>
           <Header />
           {children}
           <Footer />
-          <SmartSuggestionPopover />
         </Providers>
       </body>
     </html>

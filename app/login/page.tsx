@@ -25,10 +25,18 @@ export default function LoginPage() {
     return;
   }
 
-  localStorage.setItem("isLoggedIn", "true");
-  localStorage.setItem("userName", isLogin ? email.split("@")[0] : name);
+  const userName = isLogin ? email.split("@")[0] : name;
 
-  // Fire custom event so Header picks it up immediately
+  // Store in localStorage
+  localStorage.setItem("isLoggedIn", "true");
+  localStorage.setItem("userName", userName);
+
+  // Also store in cookies (expires in 7 days)
+  const expires = new Date();
+  expires.setDate(expires.getDate() + 7);
+  document.cookie = `isLoggedIn=true; expires=${expires.toUTCString()}; path=/`;
+  document.cookie = `userName=${userName}; expires=${expires.toUTCString()}; path=/`;
+
   window.dispatchEvent(new Event("authChange"));
 
   setTimeout(() => {

@@ -57,68 +57,77 @@ export default function Home() {
           ))}
         </div>
 
-
 {/* Promo Banners */}
 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+
   {/* Banner 1 — Gaming */}
-  <div className="relative rounded-2xl overflow-hidden h-44">
-    <img
-      src="https://images.unsplash.com/photo-1593640408182-31c228e3fe8b?w=800&h=400&fit=crop"
-      alt="Gaming Banner"
-      className="w-full h-full object-cover"
-    />
-    <div className="absolute inset-0 bg-black/55 flex flex-col justify-center px-5">
-      <span className="text-xs text-purple-300 font-semibold uppercase tracking-widest mb-1">New Arrivals</span>
-      <h3 className="text-white font-bold text-lg mb-1">Level Up Your Gaming</h3>
-      <p className="text-white/70 text-xs mb-3">Top gear for serious gamers</p>
+  <div className="rounded-2xl overflow-hidden h-44 bg-purple-50 flex">
+    <div className="flex-1 flex flex-col justify-center px-5 py-4">
+      <span className="text-xs text-purple-400 font-semibold uppercase tracking-widest mb-1">New Arrivals</span>
+      <h3 className="text-slate-800 font-bold text-lg mb-1 leading-tight">Level Up Your Gaming</h3>
+      <p className="text-slate-500 text-xs mb-3">Top gear for serious players</p>
       <Link
         href="/products"
-        className="text-xs font-semibold text-white border border-white px-4 py-1.5 rounded-full w-fit hover:bg-white hover:text-slate-800 transition-colors"
+        className="text-xs font-semibold bg-purple-500 text-white px-4 py-1.5 rounded-full w-fit hover:bg-purple-600 transition-colors"
       >
         Shop Now →
       </Link>
+    </div>
+    <div className="w-36 flex-shrink-0">
+      <img
+        src="/asset/gaming.png"
+        alt="Gaming"
+        className="w-full h-full object-cover"
+      />
     </div>
   </div>
 
   {/* Banner 2 — Beauty */}
-  <div className="relative rounded-2xl overflow-hidden h-44">
-    <img
-      src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&h=400&fit=crop"
-      alt="Beauty Banner"
-      className="w-full h-full object-cover"
-    />
-    <div className="absolute inset-0 bg-black/55 flex flex-col justify-center px-5">
-      <span className="text-xs text-pink-300 font-semibold uppercase tracking-widest mb-1">Beauty Essentials</span>
-      <h3 className="text-white font-bold text-lg mb-1">Glow Up with Wishly</h3>
-      <p className="text-white/70 text-xs mb-3">Skincare, makeup and more</p>
+  <div className="rounded-2xl overflow-hidden h-44 bg-pink-50 flex">
+    <div className="flex-1 flex flex-col justify-center px-5 py-4">
+      <span className="text-xs text-pink-400 font-semibold uppercase tracking-widest mb-1">Beauty Essentials</span>
+      <h3 className="text-slate-800 font-bold text-lg mb-1 leading-tight">Glow Up with Wishly</h3>
+      <p className="text-slate-500 text-xs mb-3">Skincare, makeup and more</p>
       <Link
         href="/products"
-        className="text-xs font-semibold text-white border border-white px-4 py-1.5 rounded-full w-fit hover:bg-white hover:text-slate-800 transition-colors"
+        className="text-xs font-semibold bg-pink-500 text-white px-4 py-1.5 rounded-full w-fit hover:bg-pink-600 transition-colors"
       >
         Shop Now →
       </Link>
+    </div>
+    <div className="w-36 flex-shrink-0">
+      <img
+        src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300&h=200&fit=crop"
+        alt="Beauty"
+        className="w-full h-full object-cover"
+      />
     </div>
   </div>
 
   {/* Banner 3 — Travel */}
-  <div className="relative rounded-2xl overflow-hidden h-44">
-    <img
-      src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=400&fit=crop"
-      alt="Travel Banner"
-      className="w-full h-full object-cover"
-    />
-    <div className="absolute inset-0 bg-black/55 flex flex-col justify-center px-5">
-      <span className="text-xs text-amber-300 font-semibold uppercase tracking-widest mb-1">Travel Season</span>
-      <h3 className="text-white font-bold text-lg mb-1">Pack Light, Travel Right</h3>
-      <p className="text-white/70 text-xs mb-3">Luggage, bags and accessories</p>
+  <div className="rounded-2xl overflow-hidden h-44 bg-amber-50 flex">
+    <div className="flex-1 flex flex-col justify-center px-5 py-4">
+      <span className="text-xs text-amber-400 font-semibold uppercase tracking-widest mb-1">Travel Season</span>
+      <h3 className="text-slate-800 font-bold text-lg mb-1 leading-tight">Pack Light Travel Right</h3>
+      <p className="text-slate-500 text-xs mb-3">Luggage, bags and more</p>
       <Link
         href="/products"
-        className="text-xs font-semibold text-white border border-white px-4 py-1.5 rounded-full w-fit hover:bg-white hover:text-slate-800 transition-colors"
+        className="text-xs font-semibold bg-amber-500 text-white px-4 py-1.5 rounded-full w-fit hover:bg-amber-600 transition-colors"
       >
         Shop Now →
       </Link>
     </div>
+    <div className="w-36 flex-shrink-0">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1684407616508-b9e82c8bc8a0?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Travel"
+        className="w-full h-full object-cover"
+      />
+    </div>
   </div>
+
+
+
 </div>
 
         <div className="flex items-center justify-between mb-4">
