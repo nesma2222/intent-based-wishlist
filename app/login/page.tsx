@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,34 +15,40 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const router = useRouter();
 
- const handleSubmit = () => {
-  if (!email || !password) {
-    setError("Please fill in all fields.");
-    return;
-  }
-  if (!isLogin && !name) {
-    setError("Please enter your name.");
-    return;
-  }
+  // Redirect if already logged in
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn === "true") {
+      router.push("/");
+    }
+  }, [router]);
 
-  const userName = isLogin ? email.split("@")[0] : name;
+  const handleSubmit = () => {
+    if (!email || !password) {
+      setError("Please fill in all fields.");
+      return;
+    }
+    if (!isLogin && !name) {
+      setError("Please enter your name.");
+      return;
+    }
 
-  // Store in localStorage
-  localStorage.setItem("isLoggedIn", "true");
-  localStorage.setItem("userName", userName);
+    const userName = isLogin ? email.split("@")[0] : name;
 
-  // Also store in cookies (expires in 7 days)
-  const expires = new Date();
-  expires.setDate(expires.getDate() + 7);
-  document.cookie = `isLoggedIn=true; expires=${expires.toUTCString()}; path=/`;
-  document.cookie = `userName=${userName}; expires=${expires.toUTCString()}; path=/`;
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("userName", userName);
 
-  window.dispatchEvent(new Event("authChange"));
+    const expires = new Date();
+    expires.setDate(expires.getDate() + 7);
+    document.cookie = `isLoggedIn=true; expires=${expires.toUTCString()}; path=/`;
+    document.cookie = `userName=${userName}; expires=${expires.toUTCString()}; path=/`;
 
-  setTimeout(() => {
-    router.push("/");
-  }, 100);
-};
+    window.dispatchEvent(new Event("authChange"));
+
+    setTimeout(() => {
+      router.push("/");
+    }, 100);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-slate-50">

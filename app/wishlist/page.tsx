@@ -116,11 +116,11 @@ export default function WishlistPage() {
         <div>
           <div className="flex items-center gap-2 mb-5">
             <Heart size={16} className="text-slate-400" />
-            <h2 className="text-base font-bold text-slate-800">Uncategorized</h2>
+            <h2 className="text-base font-bold text-slate-800">General Wishlist</h2>
             <span className="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full font-medium">
               {myWishlist.length} items
             </span>
-            <span className="text-xs text-slate-400 ml-1">— Add more to get smart suggestions</span>
+            <span className="text-xs text-black-400 ml-1">— Add more to get smart suggestions</span>
           </div>
 
           {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3"> */}
